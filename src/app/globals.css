@@ -1,15 +1,9 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +14,147 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(154, 149, 149);
+  border-radius: 10px;
+  
+  
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 10px;
+
+}
+
+
+.tiptap-editor {
+  background-color: whitesmoke;
+  color: #0a0a0a;
+  font-family: 'KrutiDev', sans-serif;
+  padding: 20px;
+  min-height: 80vh;
+  max-height: 80vh ;
+  font-size: 25px;
+  line-height: 1;
+  text-align: justify;
+  overflow-y: auto;
+  text-wrap-mode: wrap;
+  white-space-collapse: preserve-spaces; 
+  border-radius: 10px;
+}
+
+.div-editor {
+
+  background-color: whitesmoke;
+  color:#0a0a0a;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 80vh;
+  max-height: 80vh ;
+
+  padding: 20px;
+  font-size:17px;
+  line-height: 1.6;
+  text-align: justify;
+  overflow-y: auto ;
+  text-wrap-mode: wrap;
+  white-space-collapse: preserve-spaces;
+  border-radius: 10px; 
+
+}
+
+.tiptap-editor:focus, .ProseMirror:focus  {
+  user-select: none;
+  outline: none;
+  padding: auto;
+  white-space-collapse: preserve-spaces;  
+}
+
+
+.ProseMirror table {
+  table-layout: auto !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+}
+
+
+
+.ProseMirror table,
+.ProseMirror th, 
+.ProseMirror tr,
+.ProseMirror col, 
+.ProseMirror td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0%;
+  max-height: 20px;
+  min-height: 10px;
+  white-space-collapse: collapse;
+}
+
+@font-face {
+  font-family: 'KrutiDev';
+  src: url('./assets/KRDEV016.TTF') format('truetype');
+}
+
+
+
+.div-editor table {
+  table-layout: auto !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+
+}
+
+
+
+.div-editor table, 
+.div-editor td, 
+.div-editor th, 
+.div-editor tr, 
+.div-editor col {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+  text-wrap-mode: wrap;
+  white-space-collapse:collapse;
+}
+
+
+/* .ProseMirror table {
+  width: 100% !important;
+  min-width: 100% !important;
+  table-layout: fixed !important;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+  min-width: 100% !important;
+  width: 100% !important;
+}
+
+
+.div-editor table {
+  width: 100% !important;
+  min-width: 100% !important;
+  table-layout: fixed !important;
+}
+
+.div-editor table td,
+.div-editor table th {
+  min-width: 100% !important;
+  width: 100% !important;
+} */

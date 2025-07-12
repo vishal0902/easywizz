@@ -9,12 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tiptap/core": "^2.26.1",
+    "@tiptap/extension-image": "^2.26.1",
+    "@tiptap/extension-table": "^2.26.1",
+    "@tiptap/extension-table-cell": "^2.26.1",
+    "@tiptap/extension-table-header": "^2.26.1",
+    "@tiptap/extension-table-row": "^2.26.1",
+    "@tiptap/extension-text": "^2.26.1",
+    "@tiptap/extension-text-align": "^2.26.1",
+    "@tiptap/extension-underline": "^2.26.1",
+    "@tiptap/pm": "^2.26.1",
+    "@tiptap/react": "^2.26.1",
+    "@tiptap/starter-kit": "^2.26.1",
+    "motion": "^12.23.3",
+    "next": "15.3.5",
+    "next-auth": "^4.24.11",
+    "prosemirror-model": "^1.25.2",
+    "prosemirror-state": "^1.4.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.5"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "@types/node": "24.0.13",
+    "@types/react": "19.1.8",
+    "tailwindcss": "^4",
+    "typescript": "5.8.3"
   }
 }

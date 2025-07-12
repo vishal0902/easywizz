@@ -1,0 +1,21 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" rx="20" fill="#1A1A1A"></rect>
+
+  <!-- "E" Symbol using yellow and blue bars -->
+  <rect x="40" y="50" width="80" height="20" fill="#F2C94C" rx="4"></rect>
+  <rect x="40" y="80" width="60" height="20" fill="#2F80ED" rx="4"></rect>
+  <rect x="40" y="110" width="80" height="20" fill="#2F80ED" rx="4"></rect>
+
+  <!-- Document icon -->
+  <rect x="130" y="50" width="30" height="40" fill="#27AE60" rx="4"></rect>
+  <path d="M145 50 L160 65 L145 65 Z" fill="#2ECC71"></path>
+
+  <!-- Gear icon (simplified) -->
+  <circle cx="145" cy="120" r="12" stroke="#F2F2F2" stroke-width="2" fill="none"></circle>
+  <circle cx="145" cy="120" r="4" fill="#F2F2F2"></circle>
+  <path d="M145 105 V110 M145 130 V135 M132 120 H137 M153 120 H158" stroke="#F2F2F2" stroke-width="2"></path>
+
+  <!-- Company Name -->
+  <text x="50%" y="175" font-family="Arial, sans-serif" font-size="16" fill="#F2F2F2" text-anchor="middle">EasyWizz</text>
+</svg>
