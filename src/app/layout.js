@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SessionProvider from "./components/SessionProvider";
@@ -5,6 +6,7 @@ import { getServerSession } from "next-auth";
 import LoginButton from "./components/LoginButton";
 import { redirect } from "next/navigation";
 import { LogoSection } from "./components/LogoSection";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,15 +25,40 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await getServerSession();
-  
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          gutter={8}
+          containerClassName=""
+          containerStyle={{}}
+          toastOptions={{
+            // Define default options
+            className: "",
+            duration: 5000,
+            removeDelay: 1000,
+            style: {
+              background: "#363636",
+              color: "#fff",
+            },
+
+            // Default options for specific types
+            success: {
+              duration: 3000,
+              iconTheme: {
+                primary: "#0065F8",
+                secondary: "black",
+              },
+            },
+          }}
+        />
         <SessionProvider session={session}>
           <header className="my-4 flex justify-between text-xl font-bold items-center p-4 gap-4 h-16">
-            
             <LogoSection />
 
             <div>
@@ -40,6 +67,7 @@ export default async function RootLayout({ children }) {
           </header>
 
           {children}
+          <Analytics />
         </SessionProvider>
       </body>
     </html>

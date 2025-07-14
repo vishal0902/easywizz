@@ -13,6 +13,7 @@ import Text from "@tiptap/extension-text";
 import Image from "@tiptap/extension-image";
 import convetToUncodeFullMarkup from "@/app/utils/convert";
 import {motion} from 'motion/react'
+import toast from "react-hot-toast";
 // import { Indent } from "./IndentExtension";
 
 
@@ -113,6 +114,7 @@ const TiptapEditor = () => {
     document?.execCommand('copy')
     window?.getSelection()?.removeAllRanges();
     setCopyStatus(true)
+    toast.success("Copied...😇😍")
   }
 
 
@@ -123,6 +125,8 @@ const TiptapEditor = () => {
     // console.log(krutidevText);
     // await navigator.clipboard.writeText(convetToUncodeFullMarkup(krutidevText));
     setCopyStatus(false)
+    toast.success("Converted Successfully...😎🤩")
+
   };
 
   if (!editor) {
@@ -168,6 +172,7 @@ const TiptapEditor = () => {
                         setKrutidevText("");
                         setUnicodeText("");
                         editor.commands.setContent(";gk¡ Øqrhnso VsDLV isLV@Vkbi djsa---");
+                        toast.success("Cleared...🤗🤗")
                         }}>
                         <span>Clear</span>
                     </button>
