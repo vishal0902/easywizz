@@ -13,7 +13,7 @@ export default function LoginButton() {
     return (
       
       <div className="">
-        {!(session.user?.image) ? (<img alt="user" src={session.user?.image} height={50} width={50} className="rounded-full" onClick={()=>setShowBtn(!showBtn)}  />) : (<Avatar name={session.user?.name} onClick={()=>setShowBtn(!showBtn)}  />)}
+        {(session.user?.name) && <Avatar name={session.user?.name} onClick={()=>setShowBtn(!showBtn)}  />}
         
         {/* {session.user?.image && <img alt="user"  src={session.user.image} className="rounded-full h-14 w-14"/> } */}
         
