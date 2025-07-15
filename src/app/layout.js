@@ -7,16 +7,26 @@ import LoginButton from "./components/LoginButton";
 import { redirect } from "next/navigation";
 import { LogoSection } from "./components/LogoSection";
 import { Toaster } from "react-hot-toast";
+import { Roboto } from 'next/font/google';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+import {Nunito} from 'next/font/google'
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'], // choose the weights you need
+  variable: '--font-nunito',     // optional: for CSS variable
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata = {
   title: "EasyWizz",
@@ -29,14 +39,15 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={nunito.className}
+        // className={`${nunito.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Toaster
           position="top-center"
           reverseOrder={false}
           gutter={8}
           containerClassName=""
-          containerStyle={{}}
+          containerStyle={{fontSize:"1.2em", padding:"10px"}}
           toastOptions={{
             // Define default options
             className: "",
@@ -51,7 +62,7 @@ export default async function RootLayout({ children }) {
             success: {
               duration: 3000,
               iconTheme: {
-                primary: "#0065F8",
+                primary: "#4885ff",
                 secondary: "black",
               },
             },
