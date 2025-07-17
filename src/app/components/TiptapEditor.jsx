@@ -164,9 +164,9 @@ const TiptapEditor = () => {
           </div>
           </pre>
 
-                <div className="flex justify-center p-2">
+                <div className="flex justify-center p-2 mt-2">
                     <button className="px-8 py-1  border-1 rounded-2xl
-                    hover:bg-white hover:text-black hover:outline-double"
+                    hover:bg-blue-500 hover:text-white cursor-pointer"
                         onClick={() => {
                         setCopyStatus(false);
                         setKrutidevText("");
@@ -182,7 +182,15 @@ const TiptapEditor = () => {
         {/* Button & loader for conversion action */}
         
         <div className="md:col-span-2  grid justify-center items-center ">
-          <button   className="px-8 py-1  border-1 rounded-2xl hover:bg-white hover:text-black hover:outline-double" onClick={handleConvert}>Convert</button>
+          {/* <button   className="px-8 py-1  border-1 rounded-r-2xl hover:bg-white hover:text-black hover:outline-double" onClick={handleConvert}>Convert</button> */}
+          <svg className="cursor-pointer" onClick={handleConvert} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            width="100"
+            height="100">
+          <g fill="#4485f3" className="hover:fill-blue-300 hover:size-12">
+              {/* <circle cx="6" cy="3" r="3"></circle> */}
+          <path d="M10 20A10 10 0 1 0 0 10a10 10 0 0 0 10 10zM8.711 4.3l5.7 5.766L8.7 15.711l-1.4-1.422 4.289-4.242-4.3-4.347z"></path>
+          </g>
+          </svg>
         </div>
 
         
@@ -195,8 +203,8 @@ const TiptapEditor = () => {
           </div>
           </pre>
 
-            <div className="flex justify-center p-2">
-                <button  className="px-8 py-1  border-1 rounded-2xl hover:bg-white hover:text-black hover:outline-double" onClick={handleCopy}>
+            <div className="flex justify-center p-2 mt-2">
+                <button  className="px-8 py-1  border-1 rounded-2xl hover:bg-blue-500 hover:text-white cursor-pointer" onClick={handleCopy}>
                 {copyStatus ? <span>Copied &#10004;</span> : <span>Copy</span>}
                 </button>
             </div>
