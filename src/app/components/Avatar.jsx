@@ -10,6 +10,6 @@ export const Avatar = ({name,onClick}) => {
     avatarLogo =  nameArr[0].slice(0,1)
 
     return (
-    <div className='select-none text-2xl text-center flex flex-col justify-center h-14 w-14 rounded-full bg-blue-500 text-white cursor-pointer' onClick={onClick}>{avatarLogo}</div>
+    <div className='select-none text-2xl text-center flex flex-col justify-center h-14 w-14 rounded-full bg-blue-500 text-white cursor-pointer hover:bg-blue-600 ' onClick={onClick}>{avatarLogo}</div>
   )
 }

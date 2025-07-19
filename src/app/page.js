@@ -18,10 +18,11 @@ export default function Home() {
                 <li>🎡 &nbsp; Retains the format (bold, italic, underline, table etc.) </li>
                 <li>🚀 &nbsp; 100% Accurate and fast</li>
                 <li>🚩 &nbsp; Hassle free Conversion</li>
-                <li>🤷‍♂️ &nbsp; Absolutely free</li>
+                <li>🤷‍♂️ &nbsp; Easy to use</li>
               </ul>
               
-              <span className="flex justify-end">
+              <span className="flex justify-between">
+                <span className="mt-6 text-xl md:text-2xl text-green-600">Click to go...</span>
                 {loading ? <Image
                   src={"/loader.svg"}
                   alt="click_img"

@@ -12,7 +12,7 @@ export const LogoSection = () => {
                         alt="logo"
                         className="h-14 w-14 rounded-2xl"
                       />
-                      <span className="text-3xl">Easy<span className='text-blue-400'>Wizz</span></span>
+                      <span className="text-3xl">Easy<span className='text-blue-500'>Wizz</span></span>
                     </div>
     </div>
   )

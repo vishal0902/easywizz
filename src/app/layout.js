@@ -62,7 +62,9 @@ export default async function RootLayout({ children }) {
             success: {
               duration: 3000,
               iconTheme: {
-                primary: "#4885ff",
+                primary: "#00b630",
+                // primary: "#4885ff",
+                
                 secondary: "black",
               },
             },

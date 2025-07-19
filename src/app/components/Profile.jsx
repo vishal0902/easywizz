@@ -14,7 +14,7 @@ const Profile = ({ username, onClick }) => {
             width="1.2em"
             height="1.2em"
           >
-            <g fill="#4885ff">
+            <g fill="#2b7fff">
               <circle cx="6" cy="3" r="3"></circle>
               <path d="M6 7a5 5 0 0 0-5 4.42a.51.51 0 0 0 .5.58h8.94a.51.51 0 0 0 .5-.58A5 5 0 0 0 6 7"></path>
             </g>
