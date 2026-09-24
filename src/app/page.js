@@ -1,14 +1,20 @@
-"use client"
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { headers } from "next/headers";
+import { notFound } from "next/navigation";
 
-export default function Home() {
-  const [loading, setLoading] = useState(false)
+export default async function Home() {
+  const headerList = await headers();
+  const host = headerList.get("host") || "";
+
+  if (host === "easywizz.vercel.app" || host.endsWith(".vercel.app")) {
+    notFound();
+  }
+
   return (
     <div>
       <div className="flex justify-between">
-        <div className="py-5 px-5 min-w-fit" onClick={()=>setLoading(true)}>
+        <div className="py-5 px-5 min-w-fit">
           <Link href={"/convert"}>
             <div className="p-8 border-1 border-slate-300 rounded-4xl hover:bg-gray-900">
               <h1 className="text-white text-2xl md:text-3xl font-semibold">
@@ -20,21 +26,15 @@ export default function Home() {
                 <li>🚩 &nbsp; Hassle free Conversion</li>
                 <li>🤷‍♂️ &nbsp; Easy to use</li>
               </ul>
-              
+
               <span className="flex justify-between">
                 <span className="mt-6 text-xl md:text-2xl text-green-600">Click to go...</span>
-                {loading ? <Image
-                  src={"/loader.svg"}
-                  alt="click_img"
-                  height={60}
-                  width={60}
-                />:                
                 <Image
                   src={"/click.png"}
                   alt="click_img"
                   height={60}
                   width={60}
-                />}{" "}
+                />
               </span>
             </div>
           </Link>
