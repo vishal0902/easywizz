@@ -1,24 +1,25 @@
-import Link from "next/link";
-
 export const metadata = {
-  title: "404 | Not Found",
+  title: "503 | Service Temporarily Unavailable",
 };
 
 export default function NotFound() {
   return (
     <main className="flex min-h-[60vh] items-center justify-center px-6 py-16 text-white">
-      <div className="max-w-md text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-400">Error 404</p>
-        <h1 className="mt-4 text-4xl font-bold">Page not found</h1>
-        <p className="mt-4 text-gray-300">
-          The page you are looking for does not exist or is not available on this domain.
+      <div className="max-w-2xl rounded-2xl border border-red-500/30 bg-black/20 p-8 text-center shadow-xl">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-400">503 — Service Temporarily Unavailable</p>
+
+        <p className="mt-6 text-base leading-7 text-gray-200">
+          This deployment endpoint is currently unavailable due to a temporary hosting configuration or resource limitation.
         </p>
-        <Link
-          href="/"
-          className="mt-6 inline-block rounded-lg bg-red-600 px-5 py-3 font-medium text-white transition hover:bg-red-500"
-        >
-          Go back home
-        </Link>
+
+        <p className="mt-4 text-base leading-7 text-gray-300">
+          Please try again later. If the issue persists, the deployment may require additional hosting resources or configuration changes.
+        </p>
+
+        <div className="mt-8 text-left rounded-xl border border-red-500/20 bg-red-500/5 p-4 text-sm text-red-200">
+          <span className="font-semibold">Error ID:</span>{" "}
+          <code className="rounded bg-black/20 px-2 py-1 text-red-100">VERCEL_DEPLOYMENT_UNAVAILABLE</code>
+        </div>
       </div>
     </main>
   );

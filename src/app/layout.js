@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 import { LogoSection } from "./components/LogoSection";
 import { Toaster } from "react-hot-toast";
 import { Roboto } from 'next/font/google';
+import { headers } from "next/headers";
 
 import {Nunito} from 'next/font/google'
 
@@ -35,6 +36,9 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await getServerSession();
+  const headerList = await headers();
+  const host = headerList.get("host") || "";
+  const isVercelDomain = host === "easywizz.vercel.app" || host.endsWith(".vercel.app");
 
   return (
     <html lang="en">
@@ -71,13 +75,15 @@ export default async function RootLayout({ children }) {
           }}
         />
         <SessionProvider session={session}>
-          <header className="my-4 flex justify-between text-xl font-bold items-center p-4 gap-4 h-16">
-            <LogoSection />
+          {!isVercelDomain && (
+            <header className="my-4 flex justify-between text-xl font-bold items-center p-4 gap-4 h-16">
+              <LogoSection />
 
-            <div>
-              <LoginButton />
-            </div>
-          </header>
+              <div>
+                <LoginButton />
+              </div>
+            </header>
+          )}
 
           {children}
           <Analytics />
