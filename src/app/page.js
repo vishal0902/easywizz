@@ -1,21 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import { headers } from "next/headers";
-import { notFound } from "next/navigation";
-// import { useState } from "react";
+// import { headers } from "next/headers";
+// import { notFound } from "next/navigation";
+import { useState } from "react";
 
 export default async function Home() {
   
-  // const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
   
   //new code
 
-  const headerList = await headers();
-  const host = headerList.get("host") || "";
+  // const headerList = await headers();
+  // const host = headerList.get("host") || "";
 
-  if (host === "easywizz.vercel.app" || host.endsWith(".vercel.app") || host.endsWith(".vercel.app/convert")) {
-    notFound();
-  }
+  // if (host === "easywizz.vercel.app" || host.endsWith(".vercel.app") || host.endsWith(".vercel.app/convert")) {
+  //   notFound();
+  // }
 
   return (
     <div>
@@ -34,7 +34,7 @@ export default async function Home() {
               </ul>
 
               
-              {/* <span className="flex justify-between">
+              <span className="flex justify-between">
                 <span className="mt-6 text-xl md:text-2xl text-green-600">Click to go...</span>
                 {loading ? <Image
                   src={"/loader.svg"}
@@ -48,9 +48,9 @@ export default async function Home() {
                   height={60}
                   width={60}
                 />}{" "}
-              </span> */}
+              </span>
 
-              //new code
+              {/* new code
               <span className="flex justify-between">
                 <span className="mt-6 text-xl md:text-2xl text-green-600">Click to go...</span>
                 <Image
@@ -59,7 +59,7 @@ export default async function Home() {
                   height={60}
                   width={60}
                 />
-              </span>
+              </span> */}
             </div>
           </Link>
         </div>

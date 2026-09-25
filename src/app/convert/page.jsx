@@ -1,6 +1,6 @@
-// "use client"
-import { headers } from "next/headers";
-import { notFound } from "next/navigation";
+"use client"
+// import { headers } from "next/headers";
+// import { notFound } from "next/navigation";
 
 
 import { useSession } from "next-auth/react";
@@ -10,15 +10,16 @@ import TiptapEditor from "../components/TiptapEditor";
 
 
 
-export default async function Page() {
+export default function Page() {
 
   //new code
-  const headerList = await headers();
-  const host = headerList.get("host") || "";
+  // const headerList = await headers();
+  // const host = headerList.get("host") || "";
 
-  if (host === "easywizz.vercel.app" || host.endsWith(".vercel.app") || host.endsWith(".vercel.app/convert")) {
-    notFound();
-  }
+  // if (host === "easywizz.vercel.app" || host.endsWith(".vercel.app") || host.endsWith(".vercel.app/convert")) {
+  //   notFound();
+  // }
+
 
 
   const {data: session} = useSession()
