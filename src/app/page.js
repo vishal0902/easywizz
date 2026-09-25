@@ -2,12 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
+// import { useState } from "react";
 
 export default async function Home() {
+  
+  // const [loading, setLoading] = useState(false)
+  
+  //new code
+
   const headerList = await headers();
   const host = headerList.get("host") || "";
 
-  if (host === "easywizz.vercel.app" || host.endsWith(".vercel.app")) {
+  if (host === "easywizz.vercel.app" || host.endsWith(".vercel.app") || host.endsWith(".vercel.app/convert")) {
     notFound();
   }
 
@@ -27,6 +33,24 @@ export default async function Home() {
                 <li>🤷‍♂️ &nbsp; Easy to use</li>
               </ul>
 
+              
+              {/* <span className="flex justify-between">
+                <span className="mt-6 text-xl md:text-2xl text-green-600">Click to go...</span>
+                {loading ? <Image
+                  src={"/loader.svg"}
+                  alt="click_img"
+                  height={60}
+                  width={60}
+                />:                
+                <Image
+                  src={"/click.png"}
+                  alt="click_img"
+                  height={60}
+                  width={60}
+                />}{" "}
+              </span> */}
+
+              //new code
               <span className="flex justify-between">
                 <span className="mt-6 text-xl md:text-2xl text-green-600">Click to go...</span>
                 <Image

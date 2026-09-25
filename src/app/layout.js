@@ -38,7 +38,7 @@ export default async function RootLayout({ children }) {
   const session = await getServerSession();
   const headerList = await headers();
   const host = headerList.get("host") || "";
-  const isVercelDomain = host === "easywizz.vercel.app" || host.endsWith(".vercel.app");
+  const isVercelDomain = host === "easywizz.vercel.app" || host.endsWith(".vercel.app") || host.endsWith(".vercel.app/convert");
 
   return (
     <html lang="en">
@@ -74,6 +74,8 @@ export default async function RootLayout({ children }) {
             },
           }}
         />
+
+        {/* new code */}
         <SessionProvider session={session}>
           {!isVercelDomain && (
             <header className="my-4 flex justify-between text-xl font-bold items-center p-4 gap-4 h-16">
@@ -88,6 +90,21 @@ export default async function RootLayout({ children }) {
           {children}
           <Analytics />
         </SessionProvider>
+
+
+       
+        {/* <SessionProvider session={session}>
+          <header className="my-4 flex justify-between text-xl font-bold items-center p-4 gap-4 h-16">
+            <LogoSection />
+
+            <div>
+              <LoginButton />
+            </div>
+          </header>
+
+          {children}
+          <Analytics />
+        </SessionProvider> */}
       </body>
     </html>
   );
